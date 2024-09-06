@@ -1,1 +1,2 @@
 ErrorDocument 404 /cdi9919/235/error/error.html
+DirectoryIndex /cdi9919/235/error/noterror.html
