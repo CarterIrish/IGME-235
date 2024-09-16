@@ -15,7 +15,8 @@ blockquote {
 body
 {
     background-color:lightblue;
-    margin:3em
+    margin:3em;
+    font-family: Arial, sans-serif;
 }
 
 p
