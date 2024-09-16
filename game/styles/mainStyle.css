@@ -4,9 +4,13 @@ h1 {
     font-family: sans-serif;
     border-bottom: 1px solid blue;
     }
-h2
+h1,h2
 {
-    color: slategrey;
+      font-family: "SUSE", sans-serif;
+      font-optical-sizing: auto;
+      font-weight:bold;
+      font-style: normal;
+    
 }
 blockquote { 
     background-color: lightgray;
