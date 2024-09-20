@@ -1,7 +1,66 @@
+
 body
 {
-    background-color: rgb(22, 22, 22);
-    color:rgb(167, 213, 253);
+    background-color: black;
+    color:aliceblue;
     font-family:'Courier New', Courier, monospace;
+    font-size:larger;
+    font-weight: bold;
     padding:2rem
+
+}
+
+.defaultButton
+{
+    background-color:transparent;
+    color:aliceblue;
+    font-weight: bold;
+    font-size: large;
+    border-style: inset;
+    border-color: darkslategray;
+    border-width:.2vh;
+    border-radius: 5vh;
+    padding: 1vh;
+    margin:1vh;
+}
+
+.defaultButton:hover
+{
+    transition: .3s;
+    background-color: rgb(169, 169, 169);
+    scale:1.1;
+}
+
+.defaultButton:active
+{
+    transition:.1s; 
+    transform: translate(.1vh,.2vh);
+}
+
+.htmlTags
+{
+    margin-left:.5em;
+    margin-right:.5em
+}
+.htmlTags, .sectionHeader
+{
+    color: darkslategray;
+}
+
+.sectionHeader
+{
+    text-align: center;
+}
+
+#projectsContainer
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;    
+}
+
+#projectsContainer > a
+{
+    margin:1em;
 }
