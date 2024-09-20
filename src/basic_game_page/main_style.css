@@ -1,0 +1,39 @@
+/* Purpose: Main style sheet for the basic game page home work
+Author: Carter Irish
+Date: 09/12/24
+Class: IGME 235 at RIT */
+
+#destinyLogo
+{
+    max-width: 100%;
+    height:auto;
+}
+
+Blockquote
+{
+    background-color: lightgrey;
+    border-radius: .5em;
+    border-color: blue;
+    padding:1em;
+}
+
+div.gallary img
+{
+    width: 100%;
+    max-width: 50%;
+    height:auto;
+}
+
+div.gallary:hover
+{
+    border: 1px solid #777
+}
+
+div.gallery 
+{
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
