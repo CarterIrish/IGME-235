@@ -23,7 +23,7 @@ body
 
 #headshot
 {
-    min-height:75vh;
+    min-height:60vh;
     width:auto;
 }
 
@@ -74,9 +74,11 @@ body
 #projectsContainer, #linksContainer
 {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content:center;    
+    justify-content:center;
+    flex: 0, 1, auto;    
 }
 
 #linksContainer > a, #projectsContainer > a
