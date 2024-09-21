@@ -10,7 +10,19 @@ body
 
 }
 
-.defaultButton
+#headshotContainer
+{
+    display:flex;
+    justify-content: center;
+}
+
+#headshot
+{
+    min-height:75vh;
+    width:auto;
+}
+
+.defaultButton:link, .defaultButton:visited
 {
     background-color:transparent;
     color:aliceblue;
@@ -22,7 +34,9 @@ body
     border-radius: 5vh;
     padding: 1vh;
     margin:1vh;
+    text-decoration: none;
 }
+
 
 .defaultButton:hover
 {
@@ -52,7 +66,7 @@ body
     text-align: center;
 }
 
-#projectsContainer
+#projectsContainer, #linksContainer
 {
     display: flex;
     flex-direction: row;
@@ -60,7 +74,8 @@ body
     justify-content:center;    
 }
 
-#projectsContainer > a
+#linksContainer > a, #projectsContainer > a
 {
-    margin:1em;
+    width: 6em;
+    text-align: center;
 }
