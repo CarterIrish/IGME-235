@@ -1,6 +1,6 @@
 
 h1 { 
-    color:red;
+    color:#FC6008;
     font-family: sans-serif;
     border-bottom: 1px solid blue;
     }
@@ -18,7 +18,7 @@ blockquote {
     }
 body
 {
-    background-color:lightblue;
+    background-color:#1A1056;
     margin:3em;
     font-family: Arial, sans-serif;
 }
@@ -36,4 +36,34 @@ ul
 img.side
 {
     float:right; margin: 0 12px;
+}
+
+a:link
+{
+    color:#CE1D0C;
+}
+
+a:visited
+{
+    color:#9A1509;
+}
+a:focus
+{
+    color:#CE1D0C;
+}
+a:hover
+{
+    color:#F55F51;
+}
+a:active
+{
+    color:#CE1D0C;
+}
+
+main,header,footer{
+    border:1px solid black;
+    background-color:#928DB0;
+    margin:0 auto;
+    width:80vw;
+    padding:1rem;
 }
