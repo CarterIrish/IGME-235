@@ -65,10 +65,15 @@
 
 #box1
 {
-    border: thin solid black;
     background-color: aliceblue;
     width: 300px;
     grid-column: 1/span 3;
+}
+#contentBox1
+{
+    height: 100%;
+    float:left;
+    margin-right:1em;
 }
 #box2
 {
@@ -79,6 +84,12 @@
 {
     background-color: aliceblue;
     grid-column: 6 / span 2;
+}
+#contentBox3
+{
+    height:100%;
+    float:right;
+    margin-left:1em
 }
 #box4
 {
