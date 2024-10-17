@@ -13,7 +13,6 @@
 
 #header
 {
-    border: 2px solid purple;
     grid-area: header;
 }
 
@@ -32,7 +31,6 @@
 #content
 {
     grid-area:content;
-    border: 1px solid red;
     padding:1em;
     display:grid;
     grid-template-columns: repeat(7, 100px);
@@ -43,7 +41,6 @@
 
 #footer
 {
-    border: 2px solid blue;
     grid-area:footer;
     display:grid;
     justify-content: center;
@@ -60,7 +57,6 @@
 #box8, #box8, #box9, #box10, #box11, #box12, #box13
 {
     text-align: left;
-    padding: 1em;
 }
 
 #box1
@@ -124,7 +120,9 @@
 #box9
 {
     background-color:aliceblue;
+    background-image: url("/src/project1/media/contentBox9.png");
 }
+
 
 #box10
 {
@@ -142,8 +140,16 @@
 
 #box12
 {
-    background-color:rgb(248, 238, 100);
-    grid-column: 4 / span 2;
+    background-color:rgb(255, 255, 255);
+    grid-column: 4 / span 3;
+}
+
+#contentBox12
+{
+    height:100%;
+    width:auto;
+    float:left;
+    margin-right:1em;
 }
 
 #box13

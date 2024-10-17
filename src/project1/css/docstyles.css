@@ -1,0 +1,18 @@
+.imageWrapper
+{
+    border: thin solid black;
+    margin: 1em 1em 1em 1em;
+
+}
+
+.imageWrapper img
+{
+    width:100%;
+}
+
+.imageGallary
+{
+    display:flex;
+    flex-wrap: wrap;   
+    justify-content: center;
+}
