@@ -61,7 +61,7 @@
 
 #content div p
 {
-    margin-left:1em;
+    margin-left:.5em;
 }
 
 #box1
@@ -125,9 +125,18 @@
 #box9
 {
     background-color:aliceblue;
-    background-image: url("/src/project1/media/contentBox9.png");
-}
 
+}
+#box9 p
+{
+    margin-top:0;
+}
+#contentBox9
+{
+    height:70%;
+    width:auto;
+    margin-bottom: 0;
+}
 
 #box10
 {
