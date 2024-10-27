@@ -1,3 +1,4 @@
+
 div#wrapper
 {
     display: grid;
@@ -11,16 +12,41 @@ div#wrapper
     margin: 1rem;
 }
 
+@media screen and (min-width:850px)
+{
+    div#wrapper
+    {
+        grid-template-areas:
+        "menu"
+        "header"
+        "content"
+        "footer";
+        grid-template-rows: .25fr 1fr 2.25fr .5fr;
+    }
+}
 #header
 {
     grid-area: header;
     border: thin blue solid;
 }
 
+#headerImage
+{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
 #headerImage>img
 {
-    width:100%;
-    max-width: 100%;
+    width: 100%;
+}
+
+@media screen and (min-width:850px) 
+{
+    #headerImage>img
+    {
+        width: 1600px;
+    }
 }
 
 #navbar
@@ -45,6 +71,7 @@ div#wrapper
 
 #footer
 {
+    border: thin orange solid;
     grid-area:footer;
 }
 
