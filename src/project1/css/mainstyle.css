@@ -39,14 +39,7 @@ div#wrapper
 #headerImage>img
 {
     width: 100%;
-}
-
-@media screen and (min-width:850px) 
-{
-    #headerImage>img
-    {
-        width: 1600px;
-    }
+    min-width:400px;
 }
 
 #navbar
@@ -67,6 +60,14 @@ div#wrapper
 {
     border: thin red solid;
     text-align: center;
+}
+
+@media screen and (min-width:850px) 
+{
+    #content
+    {
+        display:flex;
+    }    
 }
 
 #footer
