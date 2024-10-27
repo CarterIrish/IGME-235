@@ -54,6 +54,7 @@ div#wrapper
     border: thin green solid;
     gap:1em;
     padding:1em;
+    grid-template-columns: 1fr 1fr;
 }
 
 #content>div
@@ -70,6 +71,7 @@ div#wrapper
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
+        align-content: space-around;
     }
 }
 
