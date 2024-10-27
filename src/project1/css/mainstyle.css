@@ -67,7 +67,9 @@ div#wrapper
     #content
     {
         display:flex;
-    }    
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 }
 
 #footer
