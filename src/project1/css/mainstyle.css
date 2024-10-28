@@ -5,10 +5,11 @@ div#wrapper
     height: 100vh;
     grid-template-areas: 
     "header"
-    "menu"
+    "about"
     "content"
     "footer";
     grid-template-rows: 1fr .5fr 2fr .5fr;
+    gap:1em;
     margin: 1rem;
 }
 
@@ -17,37 +18,31 @@ div#wrapper
     div#wrapper
     {
         grid-template-areas:
-        "menu"
-        "header"
-        "content"
-        "footer";
-        grid-template-rows: .25fr 1fr 2.25fr .5fr;
+        "header  about"
+        "content content"
+        "footer  footer";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
     }
 }
-#header
+section#header
 {
     grid-area: header;
     border: thin blue solid;
 }
 
-#headerImage
+div#headerImage
 {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    display:flex;
+    justify-content: center;
 }
-#headerImage>img
+div#headerImage>img
 {
-    width: 100%;
-    min-width:400px;
-}
-
-#navbar
-{
-    grid-area: menu;
+    min-height:60vh;
+    width:auto;
 }
 
-#content
+section#content
 {
     grid-area: content;
     display:grid;
@@ -57,7 +52,7 @@ div#wrapper
     grid-template-columns: 1fr 1fr;
 }
 
-.contentBox
+div.contentBox
 {
     border: thin red solid;
     text-align: center;
@@ -66,15 +61,16 @@ div#wrapper
     border-radius: 25% 10%;
 }
 
-.contentBox>p
+div.contentBox>p
 {
     margin-top:1em;
 }
 
 @media screen and (min-width:850px) 
 {
-    #content
+    section#content
     {
+        grid-column: span 2;
         display:flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -83,9 +79,32 @@ div#wrapper
     }
 }
 
-#footer
+section#footer
 {
     border: thin orange solid;
     grid-area:footer;
+    text-align: center;
 }
 
+div.socials
+{
+    display:flex;
+    flex-direction:column;
+    -ms-flex-direction: column;
+    align-items: center;
+}
+
+a.socialLink
+{
+    color:#36bc50;
+    width:fit-content;
+    border-radius:.5vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
+a.socialLink:hover
+{
+    background-color: darkgrey;
+    scale: 1.1;
+    transition: .7s;
+}
