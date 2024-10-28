@@ -3,37 +3,78 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/src/project1/css/bootstrap-reboot.css">
-        <link rel="stylesheet" href="/src/project1/css/mainstyle.css">
+        <link rel="stylesheet" href="css/bootstrap-reboot.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/mainstyle.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
         <title>Do Something Exciting</title>
     </head>
     <body>
+
         <div id="wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Navbar</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+            </nav>
             <section id="header">
-                <div id="headerImage"><img src="/src/project1/media/headshot.jpeg" height="400"></div>
+                <div id="headerImage"><img alt="Carter Irish" src="media/headshot.jpeg" height="400"></div>
             </section>
             <section id="about">
                 <h2>About:</h2>
-                <p><span class="htmlTags">&lt;h2&gt;</span>
+                <p><span class="htmlTags">&lt;p&gt;</span>
                 Hi. I'm Carter, a college student who is aspiring to work in the tech field. 
                 Right now I'm majoring in Game Design & Developement at Rochester Institute of Technology.
-                <span class="htmlTags">&lt;/h2&gt;</span></p>
+                <span class="htmlTags">&lt;/p&gt;</span></p>
             </section>
             <section id="content">
-                <div class="contentBox"><img src="/src/project1/media/csharplogo.png" width="100" height="100"><p>You've Been Audited:
+                <div class="contentBox"><img alt="Csharp logo" src="media/csharplogo.png" width="100" height="100"><p>You've Been Audited:
                     A 3/4 perspective tower defense game.
                 </p></div>
-                <div class="contentBox"><img src="/src/project1/media/htmllogo.png" width="100" height="100"><p>A personal portfolio</p></div>
-                <div class="contentBox"><img src="/src/project1/media/htmllogo.png" width="100" height="100"><p>A class website</p></div>
-                <div class="contentBox"><img src="/src/project1/media/javalogo.png" width="100" height="100"><p>A restaurant review tracker for Android</p></div>
-                <div class="contentBox"><img src="/src/project1/media/csharplogo.png" width="100" height="100"></div>
-                <div class="contentBox"><img src="/src/project1/media/csharplogo.png" width="100" height="100"></div>
-                <div class="contentBox"><img src="/src/project1/media/csharplogo.png" width="100" height="100"></div>
-                <div class="contentBox"><img src="/src/project1/media/csharplogo.png" width="100" height="100"></div>
-                <div class="contentBox"><img src="/src/project1/media/csharplogo.png" width="100" height="100"></div>
-                <div class="contentBox"><img src="/src/project1/media/csharplogo.png" width="100" height="100"></div>
-                <div class="contentBox"><img src="/src/project1/media/csharplogo.png" width="100" height="100"></div>
-                <div class="contentBox"><img src="/src/project1/media/csharplogo.png" width="100" height="100"></div>
+                <div class="contentBox"><img alt="HTML logo" src="media/htmllogo.png" width="100" height="100"><p>A personal portfolio</p></div>
+                <div class="contentBox"><img alt="HTML logo" src="media/htmllogo.png" width="100" height="100"><p>A class website</p></div>
+                <div class="contentBox"><img alt="Java logo" src="media/javalogo.png" width="100" height="100"><p>A restaurant review tracker for Android</p></div>
+                <div class="contentBox"><img alt="Csharp logo" src="media/csharplogo.png" width="100" height="100"></div>
+                <div class="contentBox"><img alt="Csharp logo" src="media/csharplogo.png" width="100" height="100"></div>
+                <div class="contentBox"><img alt="Csharp logo" src="media/csharplogo.png" width="100" height="100"></div>
+                <div class="contentBox"><img alt="Csharp logo" src="media/csharplogo.png" width="100" height="100"></div>
+                <div class="contentBox"><img alt="Csharp logo" src="media/csharplogo.png" width="100" height="100"></div>
+                <div class="contentBox"><img alt="Csharp logo" src="media/csharplogo.png" width="100" height="100"></div>
+                <div class="contentBox"><img alt="Csharp logo" src="media/csharplogo.png" width="100" height="100"></div>
+                <div class="contentBox"><img alt="Csharp logo" src="media/csharplogo.png" width="100" height="100"></div>
             </section>
             <section id="footer">
                 <h2>Socials:</h2>

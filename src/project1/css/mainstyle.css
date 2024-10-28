@@ -4,13 +4,13 @@ div#wrapper
     display: grid;
     height: 100vh;
     grid-template-areas: 
+    "menu"
     "header"
     "about"
     "content"
     "footer";
     grid-template-rows: 1fr .5fr 2fr .5fr;
     gap:1em;
-    margin: 1rem;
 }
 
 @media screen and (min-width:850px)
@@ -18,17 +18,22 @@ div#wrapper
     div#wrapper
     {
         grid-template-areas:
+        "menu    menu"
         "header  about"
         "content content"
         "footer  footer";
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr 2fr 1fr;
     }
 }
+
+nav{
+    grid-area:menu;
+}
+
 section#header
 {
     grid-area: header;
-    border: thin blue solid;
 }
 
 div#headerImage
@@ -42,11 +47,26 @@ div#headerImage>img
     width:auto;
 }
 
+section#about
+{
+    grid-area: about;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom:auto;
+}
+
+@media screen and (min-width:850px)
+{
+    section#about p
+    {
+        text-align: left;
+    }
+}
+
 section#content
 {
     grid-area: content;
     display:grid;
-    border: thin green solid;
     gap:1em;
     padding:1em;
     grid-template-columns: 1fr 1fr;
@@ -54,7 +74,6 @@ section#content
 
 div.contentBox
 {
-    border: thin red solid;
     text-align: center;
     padding:1em;
     background-color: #dcf5e3;
@@ -81,7 +100,6 @@ div.contentBox>p
 
 section#footer
 {
-    border: thin orange solid;
     grid-area:footer;
     text-align: center;
 }
