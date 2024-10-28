@@ -16,3 +16,13 @@
     flex-wrap: wrap;   
     justify-content: center;
 }
+
+body
+{
+    padding:1em;
+}
+
+li
+{
+    margin-top:1em;
+}
