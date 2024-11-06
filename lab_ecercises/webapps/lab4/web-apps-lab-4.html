@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Web Apps-4-HW</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Favorites</h1>
+    <h2>My Favorite Colors</h2>
+
+    <ol id="colorsList">
+
+    </ol>
+
+    <h2>My Favorite Foods</h2>
+
+    <ol id="foodsList">
+
+    </ol>
+
+    <h2>My Favorite Links</h2>
+
+    <ol id="linksList">
+
+    </ol>
+
+    <script>
+        "use strict";
+        let colors = ["red", "green", "blue", "purple", "pink"];
+        let foods = ["ramen", "sushi", "mexican", "pizza", "chili", "steak"]; // add some foods
+
+
+        // Optional - can you figure out how to pull both the key AND the value
+        // from the `links` object literal?
+        let links = {
+            "RIT": "http://www.rit.edu",
+            "RWAG": "https://www.facebook.com/RWAGclub",
+            "New Media Club": "http://newmediaclub.cias.rit.edu",
+            "Crunchyroll": "https://www.crunchyroll.com/"
+        }
+        const linkList = document.querySelector("#linksList");
+        const colorList = document.querySelector("#colorsList");
+        const foodList = document.querySelector("#foodsList");
+
+        
+        let createList = (listElement, arrayData = ["puppydogs", "butterflies", "lollipops"]) => {
+            for (let i = 0; i < arrayData.length; i++) {
+                let listItem = document.createElement("li");
+                listItem.innerHTML = arrayData[i];
+                listElement.appendChild(listItem);
+            }
+        }
+
+        createList(colorList,colors);
+        createList(foodList, foods);
+        for (let key in links) {
+            let listItem = document.createElement("li");
+            listItem.innerHTML = `<a href='${links[key]}'>${key}</a>`;
+            linkList.appendChild(listItem);
+        }
+    </script>
+</body>
+
+</html>
