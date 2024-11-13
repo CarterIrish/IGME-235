@@ -106,21 +106,22 @@
         let displayTerm = "";
 
         // 3
-        async function searchButtonClicked() 
-        {
+        async function searchButtonClicked() {
             const gifs = await getGifs();
             const urls = gifs.map(gif => gif.images.fixed_width_small.url);
-            const imgsHtml = urls.map(url => '<img src="${url}"/>').join('\n');
+            const imgsHtml = urls.map(url => `<img src="${url}"/>`).join('\n');
+
+            document.querySelector("#content").innerHTML = imgsHtml;
         }
 
-        async function getGifs()
-        {
+
+        async function getGifs() {
             console.log("searchButtonClicked() called");
             const apiKey = '5PuWjWVnwpHUQPZK866vd7wQ2qeCeqg7';
             const searchTem = document.querySelector("#searchterm").value;
             const theLimit = document.querySelector("#limit").value;
 
-            const queryString = 'https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}';
+            const queryString = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}`;
 
             console.log(queryString);
             const response = await fetch(queryString);
