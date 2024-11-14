@@ -99,37 +99,47 @@
     </style>
 
     <script>
-        // 1
+        // 1 when the window is loaded, attatch the searchButtonClicked function to the search button's click event.
         window.onload = (e) => { document.querySelector("#search").onclick = searchButtonClicked };
 
-        // 2
-        let displayTerm = "";
-
-        // 3
+        // 2 When the search button is clicked, gather the gifs and present to user
         async function searchButtonClicked() {
+            // collect the gifs
             const gifs = await getGifs();
-            const urls = gifs.map(gif => gif.images.fixed_width_small.url);
-            const imgsHtml = urls.map(url => `<img src="${url}"/>`).join('\n');
 
+            // create a new array of urls to the gif property with image links
+            const urls = gifs.map(gif => gif.images.fixed_width_small.url);
+
+            // Create a new array of html img element strings, then join the array into one string seperated into new lines
+            const imgsHtml = urls.map(url => `<img src="${url}"/>`).join('\n');
+            
+            // Assign the img elements to #content.innerHTML so they will appear in the page.
             document.querySelector("#content").innerHTML = imgsHtml;
         }
 
 
         async function getGifs() {
             console.log("searchButtonClicked() called");
+
+            // The api key for accessing the giphy api
             const apiKey = '5PuWjWVnwpHUQPZK866vd7wQ2qeCeqg7';
-            const searchTem = document.querySelector("#searchterm").value;
+            // The provided search term from the user
+            const searchTerm = document.querySelector("#searchterm").value;
+            // The provided limit on returned gifs
             const theLimit = document.querySelector("#limit").value;
 
-            const queryString = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}`;
+            // Our url query for giphy to handle
+            const queryString = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}&limit=${theLimit}`;
 
             console.log(queryString);
+            // fetch the data from giphy by using a promise based GET
             const response = await fetch(queryString);
+            // Take the returned data and parse it into a js object
             const data = await response.json();
             console.log(data);
-            return data;
+            // return the array of gifs within the giphy response
+            return data.data;
         }
-        // Grab the url with a fixed width from the object information.
     </script>
 
 
