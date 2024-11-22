@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainstyle.css">
+    <title>Anime Recomendations</title>
+    <script src="app.js">
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Anime Recomendations</h1>
+    </header>
+    <main>
+        <section id="modifiers">
+            <div class="widget">
+                Max Recomendations
+                <select id="limit">
+                    <option value="1">1</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                </select>
+            </div>
+            <div class="widget">
+                Enter an anime to seach for similar anime
+                <input id="searchTerm" type="text" size="40" maxlength="40" autofocus value="Naruto">
+            </div>
+            <div class="widget">
+                <button type="button" id="searchButton" class="purple">Get Your Recomendations</button>
+            </div>
+        </section>
+        <div id="content">
+        </div>
+    </main>
+</body>
+
+</html>

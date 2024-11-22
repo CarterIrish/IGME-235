@@ -1,0 +1,36 @@
+header
+{
+    text-align: center;
+}
+
+#content
+{
+    display:flex;
+    flex-wrap: wrap;
+    border: thin red solid;
+
+}
+
+#modifiers
+{
+    display:flex;
+    flex-direction: row;
+}
+
+.widget
+{
+    margin-left: 1em;
+    padding:.5em;
+    background-color: lightgray;
+    border-radius: .5em;
+}
+
+.purple
+{
+    background:rgb(142, 41, 224);
+}
+
+.animeTile
+{
+    margin:1em;
+}
