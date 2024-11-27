@@ -5,17 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mainstyle.css">
-    <title>Anime Recomendations</title>
+    <title>RecAnime</title>
     <script src="app.js">
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1>Anime Recomendations</h1>
+        <h1>RecAnime</h1>
     </header>
     <main>
         <section id="modifiers">
+            <div class="widget">
+                Type of Search
+                <select id="searchType">
+                    <option value="1">Recomendations</option>
+                    <option value="2">Anime</option>
+                </select>
+            </div>
+            <div class="widget">
+                Type of Source
+                <select id="type">
+                    <option value="tv">TV</option>
+                    <option value="movie">Movie</option>
+                    <option value="ova">OVA</option>
+                    <option value="special">Special</option>
+                    <option value="ona">ONA</option>
+                    <option value="music">Music</option>
+                    <option value="cm">CM</option>
+                    <option value="pv">PV</option>
+                    <option value="tv_special">TV Special</option>
+                    <option value="">ALL</option>
+                </select>
+            </div>
             <div class="widget">
                 Max Recomendations
                 <select id="limit">
@@ -30,8 +55,9 @@
                 <input id="searchTerm" type="text" size="40" maxlength="40" autofocus value="Naruto">
             </div>
             <div class="widget">
-                <button type="button" id="searchButton" class="purple">Get Your Recomendations</button>
+                <button type="button" id="searchButton">Get Your Recomendations</button>
             </div>
+
         </section>
         <div id="content">
         </div>

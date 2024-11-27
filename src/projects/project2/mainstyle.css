@@ -1,36 +1,180 @@
-header
-{
+header {
     text-align: center;
 }
 
-#content
-{
-    display:flex;
+body {
+    background-color: rgb(11, 22, 34);
+    font-family: Overpass, Arial, Helvetica, sans-serif;
+    color: rgb(201, 215, 227);
+}
+
+h1 {
+    color: rgb(201, 215, 227);
+}
+
+#content {
+    display: flex;
     flex-wrap: wrap;
-    border: thin red solid;
-
+    justify-content: center;
 }
 
-#modifiers
-{
-    display:flex;
+#modifiers {
+    display: flex;
     flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.widget
-{
-    margin-left: 1em;
-    padding:.5em;
-    background-color: lightgray;
-    border-radius: .5em;
-}
-
-.purple
-{
-    background:rgb(142, 41, 224);
-}
-
-.animeTile
-{
+.widget {
+    display:flex;
+    flex-direction: column;
+    color:rgb(201,215,227);
     margin:1em;
 }
+
+.animeLink {
+    margin: 1em;
+    border-radius: 40px;
+}
+
+.animeTile {
+    width: 250px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.animeTileText {
+    width: 100%;
+    text-align: center;
+}
+
+.animeTileImg {
+    border-radius: 20px;
+}
+
+/* Unvisited link */
+a.animeLink {
+    color: rgb(163, 163, 187);
+    /* Default link color */
+    text-decoration: none;
+    /* Removes underline */
+    font-weight: bold;
+    /* Makes the link text bold */
+}
+
+/* Visited link */
+a.animeLink:visited {
+    color: rgb(163, 163, 187);
+    /* Changes the color for visited links */
+    text-decoration: none;
+    /* Keeps underline removed */
+}
+
+/* Hover state (when the mouse is over the link) */
+a.animeLink:hover {
+    color: hsl(208, 80%, 70%);
+    /* Changes color on hover */
+    text-decoration: underline;
+    /* Underlines the link text */
+    cursor: pointer;
+    /* Changes cursor to pointer */
+    background-color: rgba(112, 128, 144, 0.466);
+    /* Adds a background for emphasis */
+
+}
+
+/* Active state (when the link is being clicked) */
+a.animeLink:active {
+    color: rgb(163, 163, 187);
+    /* Changes color when clicked */
+    text-decoration: none;
+    /* Keeps underline removed */
+    background-color: slategray;
+    /* Adds a background for emphasis */
+}
+
+button#searchButton {
+    background-color: #007bff;
+    /* Primary blue background */
+    color: white;
+    /* White text color */
+    border: none;
+    /* No border */
+    border-radius: 4px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    /* Comfortable padding */
+    font-size: 16px;
+    /* Readable text size */
+    cursor: pointer;
+    /* Pointer cursor to indicate interactivity */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth hover/active effects */
+}
+
+/* Hover state */
+button#searchButton:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* Active state */
+button#searchButton:active {
+    background-color: #003f7f;
+    /* Even darker blue on click */
+    transform: scale(0.98);
+    /* Slightly shrink the button */
+}
+
+
+select {
+    width: 100%;               /* Full width by default, can adjust */
+    padding: 10px;             /* Comfortable padding */
+    font-size: 16px;           /* Readable text */
+    color: #333;               /* Text color */
+    background-color: #fff;    /* White background */
+    border: 1px solid #ccc;    /* Subtle border */
+    border-radius: 4px;        /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover/focus effects */
+  }
+  
+  /* Hover state */
+  select:hover {
+    border-color: #007bff;     /* Change border color on hover */
+  }
+  
+  /* Focus state */
+  select:focus {
+    border-color: #007bff;     /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle blue glow */
+    outline: none;             /* Remove default outline */
+  }
+  
+  input[type="text"] {
+    width: 100%;              /* Full width by default, adjust as needed */
+    padding: 10px;            /* Comfortable padding */
+    font-size: 16px;          /* Readable text size */
+    color: #333;              /* Text color */
+    background-color: #fff;   /* White background */
+    border: 1px solid #ccc;   /* Subtle border */
+    border-radius: 4px;       /* Rounded corners */
+    box-sizing: border-box;   /* Includes padding in the element's total width/height */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover/focus effects */
+  }
+  
+  /* Hover state */
+  input[type="text"]:hover {
+    border-color: #007bff;    /* Change border color on hover */
+  }
+  
+  /* Focus state */
+  input[type="text"]:focus {
+    border-color: #007bff;    /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle blue glow */
+    outline: none;            /* Remove default outline */
+  }
+  
+  
