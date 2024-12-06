@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tileContainer {
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 2px dashed #ccc;
+        }
+
+        .tile {
+            padding: 20px;
+            background: #007BFF;
+            color: white;
+            border: 1px solid #0056b3;
+            border-radius: 5px;
+            cursor: grab;
+            text-align: center;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tileContainer">
+        <div class="tile" draggable="true" id="tile1">Tile 1</div>
+        <div class="tile" draggable="true" id="tile2">Tile 2</div>
+        <div class="tile" draggable="true" id="tile3">Tile 3</div>
+    </div>
+    <button id="resetButton">Reset Tiles</button>
+    
+    <script>
+        const tiles = document.querySelectorAll('.tile');
+        const tileContainer = document.getElementById('tileContainer');
+
+        // Save the initial state of the container's HTML
+        const initialHTML = tileContainer.innerHTML;
+
+        // Add drag and drop functionality
+        tiles.forEach(tile => {
+            tile.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', tile.id);
+                tile.style.opacity = '0.5';
+            });
+
+            tile.addEventListener('dragend', () => {
+                tile.style.opacity = '1';
+            });
+
+            tile.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+
+            tile.addEventListener('drop', (e) => {
+                e.preventDefault();
+
+                const draggedTileId = e.dataTransfer.getData('text/plain');
+                const draggedTile = document.getElementById(draggedTileId);
+                const targetTile = e.currentTarget;
+
+                const parent = targetTile.parentNode;
+                const draggedTileNextSibling = draggedTile.nextSibling === targetTile ? draggedTile : draggedTile.nextSibling;
+
+                parent.insertBefore(draggedTile, targetTile);
+                parent.insertBefore(targetTile, draggedTileNextSibling);
+            });
+        });
+
+        // Reset button functionality
+        document.getElementById('resetButton').addEventListener('click', () => {
+            tileContainer.innerHTML = initialHTML;
+
+            // Reapply event listeners after resetting
+            const newTiles = document.querySelectorAll('.tile');
+            newTiles.forEach(tile => {
+                tile.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('text/plain', tile.id);
+                    tile.style.opacity = '0.5';
+                });
+
+                tile.addEventListener('dragend', () => {
+                    tile.style.opacity = '1';
+                });
+
+                tile.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                });
+
+                tile.addEventListener('drop', (e) => {
+                    e.preventDefault();
+
+                    const draggedTileId = e.dataTransfer.getData('text/plain');
+                    const draggedTile = document.getElementById(draggedTileId);
+                    const targetTile = e.currentTarget;
+
+                    const parent = targetTile.parentNode;
+                    const draggedTileNextSibling = draggedTile.nextSibling === targetTile ? draggedTile : draggedTile.nextSibling;
+
+                    parent.insertBefore(draggedTile, targetTile);
+                    parent.insertBefore(targetTile, draggedTileNextSibling);
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
