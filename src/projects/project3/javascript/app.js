@@ -74,7 +74,7 @@ const applyEventListeners = () => {
 
             // Swap the two tiles in the DOM
             const parent = targetTile.parentNode;
-            // ensure that you only swap the nextSibling for dragged tile with target tile if they are adgjacent. 
+            // ensure that you only swap the nextSibling for dragged tile with target tile if they are adgjacent using weird conditional statment that makes barely any sense to me but stackoverflow helped out kind of 
             const draggedTileNextSibling = draggedTile.nextSibling === targetTile ? draggedTile : draggedTile.nextSibling;
 
             // insert the draged tile and target tile into their respective spots in DOM
