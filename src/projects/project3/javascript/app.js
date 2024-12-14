@@ -22,27 +22,36 @@ const words = {
     20: ['c', 'h', 'a', 'i', 'r']    // "chair"
 };
 
-
 const tileContainer = document.querySelector("#wordContainer");
 const initalHtmlState = tileContainer.innerHTML;
+const clickSound = document.querySelector("#clickSound");
 let currentWord = []; // the current state of our word
 let properWord = []; // the proper spelling of our word
 
 window.onload = (e) => {
     newWordBtnClicked();
 
+    // Replace getElementById with querySelector
     const newWordButton = document.querySelector("#newWordButton");
     newWordButton.addEventListener("click", newWordBtnClicked);
 
     const checkBtn = document.querySelector("#checkButton");
     checkBtn.addEventListener("click", checkLocation);
 
+    checkBtn.addEventListener('click', () => {
+        clickSound.currentTime = 0; // Reset to start in case it was already playing
+        clickSound.play(); // Play the sound
+    });
+
+    newWordButton.addEventListener('click', () => {
+        clickSound.currentTime = 0; // Reset to start in case it was already playing
+        clickSound.play(); // Play the sound
+    });
 }
 
-
-// Apply the event listeners for when user clicks, drags and drops a letter tile.
 const applyEventListeners = () => {
     const tiles = document.querySelectorAll('.letterTile');
+    
     // Add drag and drop events to each tile
     tiles.forEach(tile => {
         // Start dragging
@@ -65,21 +74,31 @@ const applyEventListeners = () => {
         tile.addEventListener('drop', (e) => {
             e.preventDefault();
 
+            // Play the click sound
+            clickSound.currentTime = 0; // Reset to start in case it was already playing
+            clickSound.play(); // Play the sound
+
             // Get the dragged tile
             const draggedTileId = e.dataTransfer.getData('text/plain');
-            const draggedTile = document.getElementById(draggedTileId);
+            const draggedTile = document.querySelector(`#${draggedTileId}`);
 
             // Get the tile being dropped onto
             const targetTile = e.currentTarget;
 
-            // Swap the two tiles in the DOM
-            const parent = targetTile.parentNode;
-            // ensure that you only swap the nextSibling for dragged tile with target tile if they are adgjacent using weird conditional statment that makes barely any sense to me but stackoverflow helped out kind of 
-            const draggedTileNextSibling = draggedTile.nextSibling === targetTile ? draggedTile : draggedTile.nextSibling;
+            // Check the isCorrect attribute for both tiles
+            const draggedTileIsCorrect = draggedTile.getAttribute('isCorrect') === 'false';
+            const targetTileIsCorrect = targetTile.getAttribute('isCorrect') === 'false';
 
-            // insert the draged tile and target tile into their respective spots in DOM
-            parent.insertBefore(draggedTile, targetTile);
-            parent.insertBefore(targetTile, draggedTileNextSibling);
+            // Only swap the tiles if both are not correct
+            if (draggedTileIsCorrect && targetTileIsCorrect) {
+                // Swap the two tiles in the DOM
+                const parent = targetTile.parentNode;
+                const draggedTileNextSibling = draggedTile.nextSibling === targetTile ? draggedTile : draggedTile.nextSibling;
+
+                // Insert the dragged tile and target tile into their respective spots in DOM
+                parent.insertBefore(draggedTile, targetTile);
+                parent.insertBefore(targetTile, draggedTileNextSibling);
+            }
         });
     });
 }
@@ -117,18 +136,21 @@ const newWordBtnClicked = () => {
     }
 }
 
-// check location of all letter tiles on page
+// Check the location of all letter tiles on page
 const checkLocation = () => {
-    // get list of nodes to check
     const tileNodeList = document.querySelectorAll(".letterTile");
-    // for each node, check the innerHTML against the proper letter for that location
-    for (i = 0; i < tileNodeList.length; i++) {
+    
+    // For each tile, check if it matches the proper word at that location
+    for (let i = 0; i < tileNodeList.length; i++) {
         if (tileNodeList[i].innerHTML === properWord[i]) {
-            tileNodeList[i].style.backgroundColor = "#4CAF50";
-        }
-        else {
-            tileNodeList[i].style.backgroundColor = "#FF7043";
+            // If the tile is in the correct position, mark it as correct
+            tileNodeList[i].style.backgroundColor = "#4CAF50"; // Green for correct
+            tileNodeList[i].setAttribute('isCorrect', 'true'); // Update the isCorrect attribute
+            tileNodeList[i].setAttribute('draggable', 'false'); // Make it non-draggable
+        } else {
+            // If the tile is incorrect, mark it as incorrect
+            tileNodeList[i].style.backgroundColor = "#FF7043"; // Red for incorrect
+            tileNodeList[i].setAttribute('isCorrect', 'false'); // Update the isCorrect attribute
         }
     }
 }
-
