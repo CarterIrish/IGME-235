@@ -1,3 +1,4 @@
+// Define a dictionary of words with their respective letters (as arrays)
 const words = {
     0: ['a', 'p', 'p', 'l', 'e'],    // "apple"
     1: ['b', 'a', 'k', 'e', 'r'],    // "baker"
@@ -22,22 +23,26 @@ const words = {
     20: ['c', 'h', 'a', 'i', 'r']    // "chair"
 };
 
-const tileContainer = document.querySelector("#wordContainer");
-const initalHtmlState = tileContainer.innerHTML;
-const clickSound = document.querySelector("#clickSound");
-let currentWord = []; // the current state of our word
-let properWord = []; // the proper spelling of our word
+// Key DOM elements
+const tileContainer = document.querySelector("#wordContainer"); // Container hlding letter tiles
+const initalHtmlState = tileContainer.innerHTML; // store the inital HTML state of the container for reset
+const clickSound = document.querySelector("#clickSound"); // Button click sfx
+let currentWord = []; // the current/shuffled state of our word
+let properWord = []; // the proper word in correct spelling
 
+// Window load event for setting up the game and event listeners
 window.onload = (e) => {
+    // Start the game by displaying a newly shuffled word
     newWordBtnClicked();
 
-    // Replace getElementById with querySelector
+    // Set up the event listers for buttons
     const newWordButton = document.querySelector("#newWordButton");
     newWordButton.addEventListener("click", newWordBtnClicked);
 
     const checkBtn = document.querySelector("#checkButton");
     checkBtn.addEventListener("click", checkLocation);
 
+    // Set up sfx on click
     checkBtn.addEventListener('click', () => {
         clickSound.currentTime = 0; // Reset to start in case it was already playing
         clickSound.play(); // Play the sound
@@ -49,7 +54,9 @@ window.onload = (e) => {
     });
 }
 
+// Apply event listeners to letter tiles for drag and drop
 const applyEventListeners = () => {
+    // get all the letter tiles
     const tiles = document.querySelectorAll('.letterTile');
     
     // Add drag and drop events to each tile
@@ -108,21 +115,23 @@ const shuffleArray = (arr) => {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         var temp = arr[i];
-        arr[i] = arr[j];
+        arr[i] = arr[j]; // swap elements
         arr[j] = temp;
     }
-    return arr;
+    return arr; // returned the shuffled array
 }
 
-// Get a random word
+// Get a random word, shuffle it and update the tiles
 const newWordBtnClicked = () => {
+    // reset the container state
     tileContainer.innerHTML = initalHtmlState;
+    // reapply the event listeners
     applyEventListeners();
 
     // Pick a random word and create copy for currentWord
     properWord = words[Math.floor(Math.random() * (Object.keys(words).length))];
 
-    // Create a copy of properWord
+    // Create a shuffled copy of properWord
     currentWord = shuffleArray([...properWord]);
 
     // Update the tiles with the shuffled letters
@@ -135,6 +144,7 @@ const newWordBtnClicked = () => {
 
 // Check the location of all letter tiles on page
 const checkLocation = () => {
+    // get the tiles
     const tileNodeList = document.querySelectorAll(".letterTile");
     
     // For each tile, check if it matches the proper word at that location

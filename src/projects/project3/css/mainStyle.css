@@ -1,83 +1,80 @@
+/* Center-align the header text */
 header {
     text-align: center;
 }
 
+/* Set the background color, font, and text color for the body */
 body {
-    background-color: rgb(11, 22, 34);
-    font-family: Overpass, Arial, Helvetica, sans-serif;
-    color: #c9d7e3;
+    background-color: rgb(11, 22, 34); /* Dark blue background */
+    font-family: Overpass, Arial, Helvetica, sans-serif; /* Set font stack */
+    color: #c9d7e3; /* Light gray text color */
 }
 
+/* Set the color of the main heading */
 h1 {
-    color: rgb(201, 215, 227);
+    color: rgb(201, 215, 227); /* Lighter gray color */
 }
 
-footer{
+/* Center-align the footer text */
+footer {
     text-align: center;
 }
 
-section#wordContainer
-{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
+/* Style for the word container section: aligns its children horizontally (row) */
+section#wordContainer {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
 }
 
-section#widgetBar
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+/* Style for the widget bar: flexbox layout, wraps items when needed */
+section#widgetBar {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    flex-wrap: wrap; 
 }
 
-div.widget
-{
-    margin:1em;
+/* Style for individual widgets inside the widget bar */
+div.widget {
+    margin: 1em; 
 }
 
-div.letterTile
-{
-    width:3em;
-    height:3em;
-    margin:1em;
-    font-size: 1.5em;
-    font-weight: bold;
-    border: 2px  solid #c9d7e3;;
-    text-align: center;
-    align-content: center;
-    background-color: gray;
-    border-radius: 12px;
-
+/* Style for letter tiles: squares with a border and centered text */
+div.letterTile {
+    width: 3em; 
+    height: 3em; 
+    margin: 1em; 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    border: 2px solid #c9d7e3; /* Light gray border around the tile */
+    text-align: center; 
+    align-content: center; 
+    background-color: gray; /* Set the background color of the tile to gray */
+    border-radius: 12px; 
 }
 
-div.widget>button {
-    font-size: 1.5em;
-    font-weight: bold;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    /* Smooth hover/active effects */
+/* Style for buttons inside a widget: custom button appearance */
+div.widget > button {
+    font-size: 1.5em; 
+    font-weight: bold; 
+    background-color: #007bff; /* Blue background color for the button */
+    color: white; /* Set the text color to white */
+    border: none; 
+    border-radius: 4px; 
+    padding: 10px 20px; 
+    cursor: pointer; /* Change cursor to pointer on hover */
+    /* Add smooth transitions for background color and scale effects */
+    transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
-/* Hover state */
-div.widget>button:hover {
-    background-color: #0056b3;
-    /* Darker blue on hover */
+/* Style for the button when hovered: darker blue background */
+div.widget > button:hover {
+    background-color: #0056b3; /* Change to a darker blue when hovered */
 }
 
-/* Active state */
-div.widget>button:active {
-    background-color: #003f7f;
-    /* Even darker blue on click */
-    transform: scale(0.98);
-    /* Slightly shrink the button */
+/* Style for the button when clicked: darker blue background and slight scale effect */
+div.widget > button:active {
+    background-color: #003f7f; /* Dark blue when the button is pressed */
+    transform: scale(0.98); /* Slightly shrink the button on click */
 }
-
-
-
