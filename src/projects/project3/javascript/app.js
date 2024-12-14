@@ -121,13 +121,9 @@ const newWordBtnClicked = () => {
 
     // Pick a random word and create copy for currentWord
     properWord = words[Math.floor(Math.random() * (Object.keys(words).length))];
-    console.log(properWord);
 
     // Create a copy of properWord
     currentWord = shuffleArray([...properWord]);
-    console.log("Post Shuffle");
-    console.log(currentWord);
-    console.log(properWord);
 
     // Update the tiles with the shuffled letters
     let tiles = document.querySelectorAll(".letterTile");
