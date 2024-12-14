@@ -41,7 +41,7 @@ div.letterTile
     width:2em;
     height:2em;
     margin:1em;
-    border: thin grey solid;
+    border: thin #808080 solid;
     text-align: center;
     align-content: center;
     background-color: gray;
@@ -79,3 +79,6 @@ button:active {
     transform: scale(0.98);
     /* Slightly shrink the button */
 }
+
+
+

@@ -1,0 +1,92 @@
+/* CSS Variables for Consistency */
+:root {
+    --primary-bg: #0b1622;
+    --primary-text: #c9d7e3;
+    --tile-bg: #808080;
+    --correct-bg: #4CAF50;
+    --incorrect-bg: #FF7043;
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+    --button-active-bg: #003f7f;
+}
+
+/* Body and Typography */
+body {
+    background-color: var(--primary-bg);
+    font-family: 'Overpass', Arial, sans-serif;
+    color: var(--primary-text);
+    text-align: center;
+    padding: 1em;
+}
+
+/* Word Tiles */
+section#wordContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+div.letterTile {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 2px solid var(--primary-text);
+    background-color: var(--tile-bg);
+    color: var(--primary-text);
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+section#widgetBar
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+div.widget
+{
+    margin:1em;
+}
+
+/* Button Styles */
+button {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+button:active {
+    background-color: var(--button-active-bg);
+    transform: scale(0.98);
+}
+
+/* Tile Animation */
+@keyframes swap {
+    from {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+div.letterTile.swapping {
+    animation: swap 0.3s ease-out;
+} 
