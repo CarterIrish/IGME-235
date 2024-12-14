@@ -130,6 +130,7 @@ const newWordBtnClicked = () => {
     for (i = 0; i < tiles.length; i++) {
         tiles[i].innerHTML = currentWord[i];
     }
+
 }
 
 // Check the location of all letter tiles on page

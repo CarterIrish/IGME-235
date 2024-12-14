@@ -5,7 +5,7 @@ header {
 body {
     background-color: rgb(11, 22, 34);
     font-family: Overpass, Arial, Helvetica, sans-serif;
-    color: rgb(201, 215, 227);
+    color: #c9d7e3;
 }
 
 h1 {
@@ -38,42 +38,41 @@ div.widget
 
 div.letterTile
 {
-    width:2em;
-    height:2em;
+    width:3em;
+    height:3em;
     margin:1em;
-    border: thin #808080 solid;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 2px  solid #c9d7e3;;
     text-align: center;
     align-content: center;
     background-color: gray;
+    border-radius: 12px;
+
 }
 
-button {
+div.widget>button {
+    font-size: 1.5em;
+    font-weight: bold;
     background-color: #007bff;
-    /* Primary blue background */
     color: white;
-    /* White text color */
     border: none;
-    /* No border */
     border-radius: 4px;
-    /* Rounded corners */
     padding: 10px 20px;
-    /* Comfortable padding */
     font-size: 16px;
-    /* Readable text size */
     cursor: pointer;
-    /* Pointer cursor to indicate interactivity */
     transition: background-color 0.3s ease, transform 0.2s ease;
     /* Smooth hover/active effects */
 }
 
 /* Hover state */
-button:hover {
+div.widget>button:hover {
     background-color: #0056b3;
     /* Darker blue on hover */
 }
 
 /* Active state */
-button:active {
+div.widget>button:active {
     background-color: #003f7f;
     /* Even darker blue on click */
     transform: scale(0.98);
